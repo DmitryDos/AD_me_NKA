@@ -2,11 +2,13 @@
     height: 800px;
     width: 800px;
     margin: 100px;
+    padding: 0;
     border: 1px solid black;
+    overflow-y: auto;
 }
 .upload__dropbox{
-    height: inherit;
-    width: inherit;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,8 +16,8 @@
     position: relative;
 }
 .upload__input{
-    height: inherit;
-    width: inherit;
+    height: 100%;
+    width: 100%;
     opacity: 0;
     cursor: pointer;
 }
@@ -32,8 +34,8 @@
     display: none;
 }
 .upload__table{
-    width: inherit;
-    height: inherit;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 
