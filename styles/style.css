@@ -27,17 +27,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.upload__dropbox-active{
-    display: block;
-}
 .upload__dropbox-disabled{
     display: none;
 }
 .upload__table{
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: block;
 
 }
 .upload__elem{
@@ -46,7 +42,4 @@
 }
 .upload__table-disabled{
     display: none;
-}
-.upload__table-active{
-    display: block;
 }

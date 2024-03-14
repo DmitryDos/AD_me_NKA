@@ -1,22 +1,19 @@
 window.files = [];
 
-const FirstInput = (e) => {
-    let files = document.getElementById("upload__input").files;
-    let dropbox = document.getElementsByClassName("upload__dropbox")[0];
-    let table = document.getElementsByClassName("upload__table")[0];
+const onFirstInput = (e) => {
+    let files = document.querySelector(".upload__input").files;
+    let dropbox = document.querySelector(".upload__dropbox");
     console.log(files);
     for (let elem of files) {
         window.files.push(elem);
     }
     dropbox.classList.add("upload__dropbox-disabled");
-    dropbox.classList.remove("upload__dropbox-active")
-    table.classList.remove("upload__table-disabled");
-    table.classList.add("upload__table-active")
-    InitTable();
+    initTable();
 }
 
-const InitTable = () => {
-    let table = document.getElementsByClassName("upload__table")[0];
+const initTable = () => {
+    let table = document.querySelector(".upload__table");
+    table.classList.remove("upload__table-disabled");
     for (let elem of window.files) {
         let file = document.createElement("div");
         file.className = "upload__elem";
@@ -26,8 +23,8 @@ const InitTable = () => {
 }
 
 const init = () => {
-    let input = document.getElementById("upload__input");
-    input.onchange = FirstInput;
+    let input = document.querySelector(".upload__input");
+    input.addEventListener("change", onFirstInput);
 }
 
 
