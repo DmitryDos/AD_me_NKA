@@ -1,0 +1,50 @@
+.container{
+    height: 800px;
+    width: 800px;
+    margin: 100px;
+    border: 1px solid black;
+}
+.upload__dropbox{
+    height: inherit;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.upload__input{
+    height: inherit;
+    width: inherit;
+    opacity: 0;
+    cursor: pointer;
+}
+.upload__label{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.upload__dropbox-active{
+    display: block;
+}
+.upload__dropbox-disabled{
+    display: none;
+}
+.upload__table{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+
+}
+.upload__elem{
+    height: 50px;
+    border: 1px dashed black;
+}
+.upload__table-disabled{
+    display: none;
+}
+.upload__table-active{
+    display: block;
+}
