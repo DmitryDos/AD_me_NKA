@@ -4,7 +4,7 @@
     margin: 100px;
     padding: 0;
     border: 1px solid black;
-    overflow-y: auto;
+    overflow: auto;
 }
 .upload__dropbox{
     height: 100%;

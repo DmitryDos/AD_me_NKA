@@ -8,8 +8,10 @@ const FirstInput = (e) => {
     for (let elem of files) {
         window.files.push(elem);
     }
-    dropbox.className = "upload__dropbox upload__dropbox-disabled";
-    table.className = "upload__table upload__table-active";
+    dropbox.classList.add("upload__dropbox-disabled");
+    dropbox.classList.remove("upload__dropbox-active")
+    table.classList.remove("upload__table-disabled");
+    table.classList.add("upload__table-active")
     InitTable();
 }
 
@@ -18,7 +20,7 @@ const InitTable = () => {
     for (let elem of window.files) {
         let file = document.createElement("div");
         file.className = "upload__elem";
-        file.innerHTML = elem.name;
+        file.innerText = elem.name;
         table.append(file);
     }
 }
