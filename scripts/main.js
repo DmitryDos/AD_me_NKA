@@ -25,6 +25,7 @@ const InitTable = () => {
 
 const init = () => {
     let input = document.getElementById("upload__input");
+    input.onchange = FirstInput;
 }
 
 
