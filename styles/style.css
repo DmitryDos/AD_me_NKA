@@ -1,10 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
+:root{
+    --light-bg: #edebe9;
+    --dark-txt: #5a002d;
+    --yellow-btn: #ec9005;
+    --ligth-yellow-btn: #efa821;
+    --gray-bg: #D9D9D9;
+    --h: "Yanone Kaffeesatz", sans-serif;
+    --p: "Roboto", sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .container{
-    height: 800px;
-    width: 800px;
-    margin: 100px;
-    padding: 0;
+    min-height: 1000px;
+    width: 740px;
     border: 1px solid black;
     overflow: auto;
+    box-sizing: border-box;
 }
 .upload__dropbox{
     height: 100%;
@@ -14,6 +32,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    background-color: var(--light-bg);
 }
 .upload__input{
     height: 100%;
@@ -21,7 +40,12 @@
     opacity: 0;
     cursor: pointer;
 }
-.upload__label{
+.upload__dropbox_label{
+    font-family: var(--h);
+    line-height: 1.15;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--dark-txt);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,16 +54,95 @@
 .upload__dropbox-disabled{
     display: none;
 }
-.upload__table{
+.upload__field{
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    display: block;
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: white;
+}
+.upload__title{
+    margin: 10px 0;
+    font-family: var(--h);
+    color: black;
+    line-height: 1.15;
+    font-size: 32px;
+    font-weight: 600;
+}
+.upload__button{
+    background-color: var(--ligth-yellow-btn);
+    margin: 10px 0;
+    font-family: var(--p);
+    line-height: 0.75;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    padding: 3px;
+    box-sizing: border-box;
+    min-width: 230px;
+    min-height: 35px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+.upload__button:hover{
+    filter: brightness(120%);
+}
+.upload__list{
+    width: 100%;
+    background-color: var(--gray-bg);
+    padding: 10px;
+}
+.upload__label{
+    margin: 10px 0;
+    font-family: var(--p);
+    line-height: 0.75;
+    font-size: 16px;
+    font-weight: 400;
+}
+.upload__description{
+    width: 100%;
+    border: none;
+    background-color: var(--gray-bg);
+    padding: 10px;
+    resize: none;
+    font-family: var(--p);
+    line-height: 0.75;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    min-height: 170px;
+}
+.upload__publication{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 10px;
+    gap: 10px;
+}
+.upload__publication__label{
+    font-family: var(--p);
+    line-height: 0.75;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+.upload__publication__input{
+    margin: 0;
+}
+.upload__button-dark{
+    background-color: var(--yellow-btn);
 }
 .upload__elem{
     height: 50px;
     border: 1px dashed black;
 }
-.upload__table-disabled{
+.upload__field-disabled{
     display: none;
 }

@@ -10,14 +10,33 @@
     <script defer src="scripts/main.js"></script>
 </head>
 <body>
-    <section class="container upload">
-        <div class="upload__dropbox">
-            <label for="upload__input" class="upload__label">Drop your files here</label>
-            <input type="file" class="upload__input" id="upload__input" multiple name="files">
-        </div>
-        <div class="upload__table upload__table-disabled">
+<section class="container upload">
+    <div class="upload__dropbox">
+        <label class="upload__dropbox_label">Drop your files here</label>
+        <input type="file" class="upload__input" multiple name="files">
+    </div>
+    <div class="upload__field upload__field-disabled">
+        <h3 class="upload__title">Добавить выпуск</h3>
+        <button class="upload__button">Загрузить изображения</button>
+        <div class="upload__list">
 
         </div>
-    </section>
+        <label for="upload__description" class="upload__description-title upload__label">Описание (для всех
+            страниц)</label>
+        <textarea name="description" id="upload__description" class="upload__description" cols="30"
+                  rows="10"></textarea>
+        <label class="upload__publication-title upload__label">Режим публикации</label>
+        <div class="upload__publication">
+            <input name="publication" type="radio" value="immediately" class="upload__publication__input" id="upload__immediately" checked>
+            <label for="upload__immediately" class="upload__publication__label">Сразу</label>
+            <input name="publication" type="radio" value="autopublication" class="upload__publication__input" id="upload__autopublication">
+            <label for="upload__autopublication" class="upload__publication__label">Автопубликация</label>
+        </div>
+        <div class="upload__buttons">
+            <button class="upload__button upload__button-dark">Добавить выпуски</button>
+            <button class="upload__button">Предпросмотр</button>
+        </div>
+    </div>
+</section>
 </body>
 </html>

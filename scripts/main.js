@@ -12,13 +12,14 @@ const onFirstInput = (e) => {
 }
 
 const initTable = () => {
-    let table = document.querySelector(".upload__table");
-    table.classList.remove("upload__table-disabled");
+    let field = document.querySelector(".upload__field");
+    field.classList.remove("upload__field-disabled");
+    let list = document.querySelector(".upload__list");
     for (let elem of window.files) {
         let file = document.createElement("div");
         file.className = "upload__elem";
         file.innerText = elem.name;
-        table.append(file);
+        list.append(file);
     }
 }
 
