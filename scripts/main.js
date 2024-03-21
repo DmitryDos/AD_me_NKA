@@ -11,11 +11,31 @@ const onFirstInput = (e) => {
     initTable();
 }
 
+const inner_text = `
+                    <h5 class="upload__card__title">Выпуск N</h5>
+                    <a href="#" class="upload__card__button">
+                        <img class="image-fit" src="images/edit-button.svg">
+                    </a>
+                    <a href="#" class="upload__card__button">
+                        <img class="image-fit" src="images/delete-button.svg">
+                    </a>
+                `
+
 const createFile = (elem) => {
-    let file = document.createElement("div");
-    file.className = "upload__elem";
-    file.innerText = elem.name;
-    return file;
+    let card = document.createElement("div");
+    card.className = "upload__card";
+    let thumbnail_div = document.createElement("div");
+    thumbnail_div.className = "upload__card__thumbnail";
+    let thumbnail = document.createElement("img")
+    thumbnail.className = "image-fit";
+    thumbnail.src = URL.createObjectURL(elem);
+    thumbnail_div.append(thumbnail);
+    card.append(thumbnail_div);
+    let title = document.createElement("div");
+    title.className = "upload__card__title-segment";
+    title.innerHTML = inner_text;
+    card.append(title);
+    return card;
 }
 
 const initTable = () => {

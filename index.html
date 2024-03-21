@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/upload__card_style.css">
     <script defer src="scripts/main.js"></script>
 </head>
 <body>
@@ -22,7 +23,20 @@
             <label>Загрузить изображения</label>
         </div>
         <div class="upload__list">
-
+            <div class="upload__card">
+                <div class="upload__card__thumbnail">
+                    <img src="images/sample_image.jpg" class="image-fit">
+                </div>
+                <div class="upload__card__title-segment">
+                    <h5 class="upload__card__title">Выпуск N</h5>
+                    <a href="#" class="upload__card__button">
+                        <img class="image-fit" src="images/edit-button.svg">
+                    </a>
+                    <a href="#" class="upload__card__button">
+                        <img class="image-fit" src="images/delete-button.svg">
+                    </a>
+                </div>
+            </div>
         </div>
         <label for="upload__description" class="upload__description-title upload__label">Описание (для всех
             страниц)</label>
