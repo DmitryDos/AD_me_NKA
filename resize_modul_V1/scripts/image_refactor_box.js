@@ -2,11 +2,10 @@ function imageRefactorModule() {
     let backImage = document.querySelector(".image_refactor_file_back");
     let frontImage = document.querySelector(".image_refactor_file_front");
 
-    let imageBox = document.querySelector(".image_refactor_box");
-
+    //let imageBox = document.querySelector(".image_refactor_box");
     let mousePosX, mousePosY;
     let imagePosX = 0, imagePosY = 0;
-    const moveImage = function(event) {
+    const moveImage = function (event) {
         let deltaX = event.clientX;
         let deltaY = event.clientY;
 
@@ -34,7 +33,7 @@ function imageRefactorModule() {
         console.log(imagePosX + " " + imagePosY);
     }
 
-    const imageClickDown = function(event) {
+    const imageClickDown = function (event) {
         mousePosX = event.clientX - imagePosX;
         mousePosY = event.clientY - imagePosY;
 
@@ -42,13 +41,35 @@ function imageRefactorModule() {
         document.addEventListener("mousemove", moveImage, event);
     }
 
-    const imageClickUp = function() {
+    const imageClickUp = function () {
         document.removeEventListener("mousemove", moveImage);
     }
 
+    let zoom = 1;
+    const imageScroll = function (event) {
+        zoom -= event.deltaY / 2400;
+        imageWidth = initImageWidth * zoom;
+        imageHeight = initImageHeight * zoom;
+        backImage.style.backgroundSize = `${imageWidth}px`;
+        frontImage.style.backgroundSize = backImage.style.backgroundSize;
+        console.log(event.deltaY);
+    }
+    backImage.style.backgroundSize = `${initImageWidth}px`;
+    frontImage.style.backgroundSize = `${initImageWidth}px`;
     backImage.style.backgroundPosition = "50% 50%";
     frontImage.style.backgroundPosition = "50% 50%";
 
+
+    if ('onwheel' in document) {
+        // IE9+, FF17+, Ch31+
+        backImage.addEventListener("wheel", imageScroll);
+    } else if ('onmousewheel' in document) {
+        // устаревший вариант события
+        backImage.addEventListener("mousewheel", imageScroll);
+    } else {
+        // Firefox < 17
+        backImage.addEventListener("MozMousePixelScroll", imageScroll);
+    }
     backImage.addEventListener("mousedown", imageClickDown);
     document.addEventListener("mouseup", imageClickUp);
 }
@@ -59,21 +80,23 @@ function imageUpload() {
 
     let fileReader = new FileReader();
 
-    const fileChange = function() {
-        imageRefactorPage.classList.remove("page_disable"); 
+    const fileChange = function () {
+        imageRefactorPage.classList.remove("page_disable");
 
         fileReader.readAsDataURL(fileInput.files[0]);
         fileReader.addEventListener("load", () => {
-        document.querySelector(".image_refactor_file_back").style.backgroundImage = "url('" + fileReader.result + "')";
-        document.querySelector(".image_refactor_file_front").style.backgroundImage = "url('" + fileReader.result + "')";
-        
-        let img = new Image;
-        img.src = fileReader.result;
-        console.log(img.width + " " + img.height);
+            document.querySelector(".image_refactor_file_back").style.backgroundImage = "url('" + fileReader.result + "')";
+            document.querySelector(".image_refactor_file_front").style.backgroundImage = "url('" + fileReader.result + "')";
 
-        imageWidth = img.width;
-        imageHeight = img.height;
-        });     
+            let img = new Image;
+            img.src = fileReader.result;
+            console.log(img.width + " " + img.height);
+
+            imageWidth = img.width;
+            initImageWidth = imageWidth;
+            imageHeight = img.height;
+            initImageHeight = imageHeight;
+        });
     };
 
     fileInput.addEventListener("change", fileChange);
@@ -84,6 +107,8 @@ function initialisation() {
     imageUpload();
 }
 
+var initImageWidth;
+var initImageHeight;
 var imageWidth;
 var imageHeight;
 initialisation();
