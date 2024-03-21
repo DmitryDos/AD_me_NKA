@@ -22,7 +22,7 @@ body{
 }
 .container{
     min-height: 1000px;
-    width: 740px;
+    min-width: 740px;
     border: 1px solid black;
     overflow: auto;
     box-sizing: border-box;
@@ -111,11 +111,12 @@ body{
     filter: brightness(120%);
 }
 .upload__list{
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    width: 100%;
+    width: 650px;
     background-color: var(--gray-bg);
     padding: 10px;
 }
@@ -127,6 +128,7 @@ body{
     font-weight: 400;
 }
 .upload__description{
+    box-sizing: border-box;
     width: 100%;
     border: none;
     background-color: var(--gray-bg);
