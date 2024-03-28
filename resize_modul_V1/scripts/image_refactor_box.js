@@ -70,8 +70,32 @@ function imageRefactorModule() {
         // Firefox < 17
         backImage.addEventListener("MozMousePixelScroll", imageScroll);
     }
+
     backImage.addEventListener("mousedown", imageClickDown);
     document.addEventListener("mouseup", imageClickUp);
+    const crop_button = document.querySelector(".download_crop");
+    const canvas = document.querySelector('.canvas_crop');
+
+    crop_button.addEventListener("click", () => {
+        canvas.width = 500;
+        canvas.height = 500;
+        let context = canvas.getContext('2d');
+        const sourceX = (initImageWidth / (2) - imagePosX / zoom - 250 / zoom);
+        const sourceY = (initImageHeight / (2) - imagePosY / zoom - 250 / zoom);
+        const sourceWidth = 500 / zoom;
+        const sourceHeight = 500 / zoom;
+        const destWidth = 500;
+        const destHeight = 500;
+        const destX = 0;
+        const destY = 0;
+        context.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
+    });
+    canvas.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.download = 'filename.png';
+        link.href = document.querySelector('.canvas_crop').toDataURL()
+        link.click();
+    })
 }
 
 function imageUpload() {
@@ -88,7 +112,7 @@ function imageUpload() {
             document.querySelector(".image_refactor_file_back").style.backgroundImage = "url('" + fileReader.result + "')";
             document.querySelector(".image_refactor_file_front").style.backgroundImage = "url('" + fileReader.result + "')";
 
-            let img = new Image;
+            img = new Image;
             img.src = fileReader.result;
             console.log(img.width + " " + img.height);
 
@@ -107,8 +131,9 @@ function initialisation() {
     imageUpload();
 }
 
-var initImageWidth;
-var initImageHeight;
-var imageWidth;
-var imageHeight;
+let initImageWidth;
+let initImageHeight;
+let imageWidth;
+let imageHeight;
+let img
 initialisation();
