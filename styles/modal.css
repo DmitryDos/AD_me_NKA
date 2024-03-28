@@ -1,0 +1,112 @@
+.modal__edit__container{
+    box-sizing: border-box;
+    width: 900px;
+    height: 600px;
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.modal__edit__img-container{
+    box-sizing: border-box;
+    width: 425px;
+    height: 580px;
+    padding: 10px 5px 10px 10px;
+    gap: 10px;
+    overflow: hidden;
+}
+.modal__edit__img{
+    width: 410px;
+    height: 560px;
+    object-fit: cover;
+}
+.hystmodal__window{
+    width: auto;
+}
+.modal__edit__text{
+    box-sizing: border-box;
+    width: 425px;
+    height: 580px;
+    padding: 10px 10px 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.modal__edit__name-field{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 20px;
+    width: 100%;
+}
+.modal__edit__name{
+    font-family: var(--p);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+}
+.modal__edit__close{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../images/close-button.svg");
+    border: none;
+    cursor: pointer;
+}
+.modal__edit__text hr{
+    width: 100%;
+    height: 1px;
+    box-sizing: border-box;
+    margin: 10px 0 15px 0;
+    border: 1px solid black;
+}
+.modal__edit__label{
+    font-family: var(--p);
+    line-height: 0.75;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 0 5px;
+}
+.modal__edit__textarea{
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    background-color: var(--gray-bg);
+    resize: none;
+    font-family: var(--p);
+    line-height: 0.75;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    min-height: 30px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.modal__edit__description{
+    margin-bottom: 10px;
+    min-height: 360px
+}
+.modal__edit__button{
+    background-color: var(--ligth-yellow-btn);
+    font-family: var(--p);
+    line-height: 0.75;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    padding: 3px;
+    box-sizing: border-box;
+    min-width: 100%;
+    min-height: 40px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+.modal__edit__button:hover{
+    filter: brightness(120%);
+}
