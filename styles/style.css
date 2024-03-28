@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yanone+Kaffeesatz:wght@200..700&display=swap');
 
-:root{
+:root {
     --light-bg: #edebe9;
     --dark-txt: #5a002d;
     --page-title-red: #d00026;
@@ -12,7 +12,8 @@
     --h: "Yanone Kaffeesatz", sans-serif;
     --p: Arial, Helvetica, sans-serif;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,14 +23,16 @@ body{
     align-items: center;
     justify-content: center;
 }
-.container{
+
+.container {
     min-height: 1000px;
     min-width: 750px;
     border: 1px solid black;
     overflow: auto;
     box-sizing: border-box;
 }
-.upload__dropbox{
+
+.upload__dropbox {
     height: 100%;
     width: 100%;
     display: flex;
@@ -39,13 +42,15 @@ body{
     position: relative;
     background-color: var(--light-bg);
 }
-.upload__input{
+
+.upload__input {
     height: 100%;
     width: 100%;
     opacity: 0;
     cursor: pointer;
 }
-.upload__dropbox_label{
+
+.upload__dropbox_label {
     font-family: var(--h);
     line-height: 1.15;
     font-size: 32px;
@@ -56,10 +61,12 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.upload__dropbox-disabled{
+
+.upload__dropbox-disabled {
     display: none;
 }
-.upload__field{
+
+.upload__field {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -69,7 +76,8 @@ body{
     padding: 50px;
     background-color: white;
 }
-.upload__title{
+
+.upload__title {
     margin: 10px 0;
     font-family: var(--h);
     /* color: black; */
@@ -78,13 +86,15 @@ body{
     font-size: 32px;
     font-weight: 600;
 }
-.upload__button-add{
+
+.upload__button-add {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
-.upload__button-add__input{
+
+.upload__button-add__input {
     position: absolute;
     left: 0;
     top: 0;
@@ -93,7 +103,8 @@ body{
     opacity: 0;
     cursor: pointer;
 }
-.upload__button{
+
+.upload__button {
     background-color: var(--ligth-yellow-btn);
     margin: 10px 0;
     font-family: var(--p);
@@ -110,10 +121,12 @@ body{
     cursor: pointer;
     transition: .3s;
 }
-.upload__button:hover{
+
+.upload__button:hover {
     filter: brightness(120%);
 }
-.upload__list{
+
+.upload__list {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -124,14 +137,16 @@ body{
     border: 1px solid var(--gray-border);
     padding: 10px 0px 10px 10px;
 }
-.upload__label{
+
+.upload__label {
     margin: 10px 0;
     font-family: var(--p);
     line-height: 0.75;
     font-size: 16px;
     font-weight: 400;
 }
-.upload__description{
+
+.upload__description {
     box-sizing: border-box;
     width: 100%;
     /* border: none; */
@@ -146,7 +161,8 @@ body{
     outline: none;
     min-height: 170px;
 }
-.upload__publication{
+
+.upload__publication {
     display: flex;
     flex-direction: row;
     height: 40px;
@@ -155,24 +171,29 @@ body{
     padding: 0 10px;
     gap: 10px;
 }
-.upload__publication__label{
+
+.upload__publication__label {
     font-family: var(--p);
     line-height: 0.75;
     font-size: 14px;
     font-weight: 400;
     text-align: center;
 }
-.upload__publication__input{
+
+.upload__publication__input {
     margin: 0;
 }
-.upload__button-dark{
+
+.upload__button-dark {
     background-color: var(--yellow-btn);
 }
-.upload__elem{
+
+.upload__elem {
     height: 50px;
     border: 1px dashed black;
 }
-.upload__field-disabled{
+
+.upload__field-disabled {
     display: none;
 }
 
@@ -181,4 +202,16 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.upload__card:last-child .upload__card__button_move-right {
+    pointer-events: none;
+    opacity: .5;
+    cursor: none;
+}
+
+.upload__card:first-child .upload__card__button_move-left {
+    pointer-events: none;
+    opacity: .5;
+    cursor: none;
 }

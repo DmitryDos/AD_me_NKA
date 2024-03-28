@@ -15,7 +15,7 @@ const onFirstInput = (e) => {
 }
 
 const createLinks = (index) => {
-    let name = "Выпуск " + (index + 1);
+    let name = "" + (index + 1);
     if (files_[index].name) {
         name = files_[index].name;
     }
@@ -64,6 +64,26 @@ const deleteFile = (index) => {
     initTable();
 }
 
+const handleSwitching = (index, direction) => {
+    if (direction) {
+        [files_[index], files_[index + 1]] = [files_[index + 1], files_[index]];
+    } else {
+        [files_[index], files_[index - 1]] = [files_[index - 1], files_[index]];
+    }
+    initTable();
+}
+
+const handleButtons = (index) => {
+    const deleteButton = document.querySelector(".upload__card__button_delete-" + index);
+    const editButton = document.querySelector(".upload__card__button_edit-" + index);
+    const rightArrow = document.querySelector(".upload__card__button_move-right-" + index);
+    const leftArrow = document.querySelector(".upload__card__button_move-left-" + index);
+    deleteButton.addEventListener("click", () => deleteFile(index));
+    editButton.addEventListener("click", () => handleEditModalOpening(index));
+    rightArrow.addEventListener("click", () => handleSwitching(index, 1));
+    leftArrow.addEventListener("click", () => handleSwitching(index, 0));
+}
+
 const initTable = () => {
     const field = document.querySelector(".upload__field");
     field.classList.remove("upload__field-disabled");
@@ -72,11 +92,8 @@ const initTable = () => {
     let count = 0;
     for (let elem of files_) {
         cardList.append(createFileCard(elem.file, count));
-        const deleteButton = document.querySelector(".upload__card__button_delete-" + count);
-        const editButton = document.querySelector(".upload__card__button_edit-" + count);
         const currentCount = count;
-        deleteButton.addEventListener("click", () => deleteFile(currentCount));
-        editButton.addEventListener("click", () => handleEditModalOpening(currentCount));
+        handleButtons(currentCount);
         count++;
     }
 }
