@@ -6,8 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/hystmodal.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/modal.css">
     <link rel="stylesheet" href="styles/upload__card_style.css">
+    <script defer src="scripts/hystmodal.min.js"></script>
     <script defer src="scripts/main.js"></script>
 </head>
 <body>
@@ -39,6 +42,31 @@
         <div class="upload__buttons">
             <button class="upload__button upload__button-dark">Опубликовать</button>
             <button class="upload__button">Предпросмотр</button>
+        </div>
+    </div>
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                <div class="modal__edit__container">
+                    <div class="modal__edit__img-container">
+                        <img src="images/sample_image.jpg" alt="Примеры" class="modal__edit__img">
+                    </div>
+                    <div class="modal__edit__text">
+                        <div class="modal__edit__name-field">
+                            <h4 class="modal__edit__name">Редактирование выпуска</h4>
+                            <button data-hystclose class="modal__edit__close"></button>
+                        </div>
+                        <hr>
+                        <label for="modal__edit__namespace" class="modal__edit__label">Название выпуска:</label>
+                        <textarea name="description" id="modal__edit__namespace" class="modal__edit__namespace modal__edit__textarea" cols="0"
+                                  rows="0"></textarea>
+                        <label for="modal__edit__description" class="modal__edit__label">Описание:</label>
+                        <textarea name="description" id="modal__edit__description" class="modal__edit__description modal__edit__textarea" cols="0"
+                                  rows="0"></textarea>
+                        <button data-hystclose class="modal__edit__button">Сохранить</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
