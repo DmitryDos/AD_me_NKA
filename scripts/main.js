@@ -20,7 +20,13 @@ const createLinks = (index) => {
         name = files_[index].name;
     }
     const innerText = `
+<a href="#" class="upload__card__button upload__card__button_move-left upload__card__button_move-left-${index}">
+    <img class="image-fit" src="images/left-arrow.svg" alt="Передвинуть влево">
+</a>
 <h5 class="upload__card__title">${name}</h5>
+<a href="#" class="upload__card__button upload__card__button_move-right upload__card__button_move-right-${index}">
+    <img class="image-fit" src="images/right-arrow.svg" alt="Передвинуть вправо">
+</a>
 <a href="#" data-hystmodal="#myModal" class="upload__card__button upload__card__button_edit upload__card__button_edit-${index}">
     <img class="image-fit" src="images/edit-button.svg" alt="Изменить"/>
 </a>
