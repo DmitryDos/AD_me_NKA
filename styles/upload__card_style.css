@@ -27,31 +27,31 @@
     background-color: #ebe5dd;
     padding: 10px;
     box-sizing: border-box;
+}
 
-    .upload__card__thumbnail {
-        width: 130px;
-        height: 195px;
-        background-color: black;
-        overflow: hidden;
-    }
+.upload__card__thumbnail {
+    width: 130px;
+    height: 195px;
+    background-color: black;
+    overflow: hidden;
+}
 
-    .upload__card__title-segment {
-        display: flex;
-        justify-content: flex-end;
-        height: 15px;
-        margin-top: 10px;
-        gap: 5px;
+.upload__card__title-segment {
+    display: flex;
+    justify-content: flex-end;
+    height: 15px;
+    margin-top: 10px;
+    gap: 5px;
+}
 
-        .upload__card__title {
-            margin-right: auto;
-            margin-left: auto;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: normal;
-        }
-        
-        .upload__card__button {
-            width: 15px;
-            height: 15px;
-        }
-    }
+.upload__card__title {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.upload__card__button {
+    width: 15px;
+    height: 15px;
 }
